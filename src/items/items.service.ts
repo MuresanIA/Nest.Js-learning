@@ -1,4 +1,4 @@
-import { Injectable, Param } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Item } from './interfaces/item.interface';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
@@ -6,6 +6,8 @@ import { InjectModel } from '@nestjs/mongoose';
 export class ItemsService {
   constructor(@InjectModel('Item') private readonly itemModel: Model<Item>) {}
 
+  // use agregations
+  // use MongoDB filters
   async findAll(): Promise<Item[]> {
     return await this.itemModel.find();
   }
