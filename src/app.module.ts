@@ -3,7 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import config from './config/keys';
-import { ItemsModule } from './items/items.module';
+import { ItemsModule } from './items/module/items.module';
+
 
 @Module({
   imports: [MongooseModule.forRoot(config.mongoURI), ItemsModule],
